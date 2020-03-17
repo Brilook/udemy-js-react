@@ -1,29 +1,26 @@
 'use strict';
-let money = +prompt('Ваш бюджет на месяц?', '100');
-let time = prompt('Введите дату в формате YYYY-MM-DD');
-let requiredExpenses = prompt('Введите обязательную статью расходов в этом месяце', 'Туалбум');
-let requiredExpensesCost = +prompt('Во сколько обойдется?');
-let requiredExpenses2 = prompt('Введите обязательную статью расходов в этом месяце', 'Туалбум');
-let requiredExpensesCost2 = +prompt('Во сколько обойдется?');
-let appData = {
-    budget: money,
-    timeData: time,
-    expenses: {
-    requiredExpenses: requiredExpensesCost,
-    requiredExpenses2: requiredExpensesCost2,
-    },
-    optionalExpenses: {//необязательные расходы
+let money = +prompt('Ваш бюджет на месяц?', '100'),
+    time = prompt('Введите дату в формате YYYY-MM-DD');
 
-    },
-    income: [],//доп. доход
-    savings: false,
-};
+    
+    let appData = {
+        budget: money,
+        timeData: time,
+        expenses: {},
+        optionalExpenses: {},//необязательные расходы
+        income: [],//доп. доход
+        savings: false,
+    };
+    
+    let a1 = prompt('Введите обязательную статью расходов в этом месяце', 'Туалбум');
+    let a2 = +prompt('Во сколько обойдется?');
+    let a3 = prompt('Введите обязательную статью расходов в этом месяце', 'Туалбум');
+    let a4 = +prompt('Во сколько обойдется?');
 
-let month = 30;
+appData.expenses.a1 = a2;
+appData.expenses.a3 = a4;
 
-let dailyBudget = money / month;
-
-alert (`бюбжет на день ${dailyBudget}`);
+alert ('бюбжет на день ' + appData.budget / 30);
 
 
 
